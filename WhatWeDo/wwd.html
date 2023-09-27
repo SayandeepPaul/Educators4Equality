@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Designed And Developed By : Sayandeep Paul(email : sayandeep775@gmail.com)
+                                        
+     Supported By:   Santanu Gope(email : santanugope62@gmail.com) 
+                     Mondira Chanda(email : mondirachanda7@gmail.com)-->
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Educators For Equality</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/b71d11497b.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Mulish&family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+  <link rel="shortcut icon" href="wwdImages/educators-for-equality-website-favicon-color.png" type="image/x-icon"
+    style="font-size:xx-large;">
+  <style type="text/tailwindcss">
+
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+    }
+    body{
+        font-family:"Poppins";
+    }
+    * {
+  margin: 0;
+  padding: 0;
+}
+
+html{ 
+  box-sizing: border-box;
+}
+
+*, *:after, *:before {
+  box-sizing: inherit;
+}
+
+body {
+  width: 100%;
+  background-color: #eee;
+}
+
+
+
+/* Nav Bar  */
+
+
+
+
+header {
+  width: 100%;
+  position: fixed;
+  z-index: 124;
+  padding: 0;
+  margin: 0;
+  background-color: rgb(255, 255, 255);
+}
+
+
+.nav__container { 
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  flex-direction: column;	
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 20px
+}
+
+
+.nav_mobile .nav_btn {
+  display: block;
+}
+
+
+.nav__mobile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__menu {
+  display: flex;
+  flex-direction: column; 
+  overflow: hidden; 
+ }
+
+.showing {
+  max-height: 37rem;  
+  transition: all .5s;
+}
+
+
+.nav__menu li {
+  list-style: none;
+  position: relative;
+  white-space: nowrap; 
+  padding: 1rem 0 0 0; 
+}
+
+
+.nav__menu li a {
+  display: block;
+  font-size: 1rem;  
+  color: #8dbdff;
+  text-decoration: none;
+}
+
+.nav__menu li a:hover {
+   color: rgb(0, 98, 163);
+
+}
+
+
+
+.nav-toggle {
+	display: block;
+	background-color: transparent;	
+	width: 40px;
+	cursor: pointer;
+	padding: 4px;
+}
+
+
+
+.nav-toggle span {
+	position: relative;
+	display: block;
+	height: 4px;
+	border-radius: 35px;
+	width: 100%;
+	margin-top: 0;
+	background-color: #000;
+	transition: all .25s;
+}
+
+
+.nav-toggle span.mrg {
+	margin-top: 5px;
+}
+
+.nav-toggle.open span:first-child { 
+	transform: rotate(45deg) translate(6.2px, 6.2px); 
+}
+
+
+.nav-toggle.open span:nth-child(2) {
+	width: 0%;
+	opacity: 0;
+}
+
+
+.nav-toggle.open span:last-child { 
+	transform: rotate(-45deg) translate(6.2px, -6.2px); 
+}
+
+/* Dropdown */ 
+
+.nav__menu .dropdown ul {
+  display: flex;
+  flex-direction: column;
+  position: static;   
+  padding: 0;
+  max-height: 0px; 
+  overflow: hidden;
+  transition: all .4s;
+}
+
+.nav__menu .dropdown ul.show {
+  max-height: 20rem;
+  transition: all .4s;
+}
+
+
+.nav__menu .dropdown li a {
+  display: block;
+  font-size: .875rem;
+  text-transform: capitalize;
+  color: #222;
+  text-decoration: none;
+}
+
+.nav__menu li a:hover {
+   color: rgb(0, 98, 163);
+
+}
+
+.nav__menu .dropdown > a:after {
+
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;    
+  font-size: .875rem;
+  padding-left: 5px;
+  color: rgb(126, 126, 126);
+}
+
+.nav__menu .dropdown .dropdown > a:after {
+
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;    
+  font-size: .875rem;
+  padding-left: 5px;
+  color: rgb(126, 126, 126);
+}
+
+
+
+.menu-toggle {
+  max-height: 0;
+  overflow: hidden;
+  transition: all .4s ease;
+ 
+}
+
+.menu-toggle.active {
+  max-height: 100vh;
+  transition: all .4s ease;
+  
+}
+ 
+.resize-animation-stopper * {
+  transition: none !important;
+  animation: none !important;
+}
+
+@media screen and (max-width: 800px) {
+    .nav__btn .nav-toggle{
+        opacity: 1;
+    }
+}
+@media screen and (min-width: 800px) {
+  .menu-toggle {
+    display: flex !important;    
+    max-height: 100vh;
+    overflow: visible;
+    /* opacity: 1; */
+  } 
+ 
+  .nav__container {
+    width: 100%;
+    max-width: 1300px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 10px;
+  }
+  
+  .nav__mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav_mobile .nav_btn {
+    display: none;
+  }
+  
+  .nav__logo img {
+    width: 60%;
+  }
+  
+  .nav__menu {
+    display: flex;
+    flex-direction: row;
+    max-height: 100%;
+    overflow: visible;
+  }
+  
+  .nav__menu li {
+    list-style: none;
+    position: relative;
+    white-space: nowrap;
+    padding: 1rem;
+  }
+  
+  
+  .nav__menu li a {
+    font-size: 1rem;
+    color: #ff4136;
+    text-decoration: none;
+   }
+  
+  .nav__menu li a:hover {
+     color: #8dbdff;
+     transition: all 0.5s ease;
+  
+  }
+  
+  
+  /* Dropdown */
+  .nav__menu .dropdown {
+    position: relative;
+    transition: all 0.5s ease;
+    z-index: 10;
+  }
+  
+  .nav__menu .dropdown ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: -30px;
+    opacity: 0;
+    visibility: hidden;  
+    overflow: visible; 
+    padding: 0 1rem; 
+    transition: all .4s ease ;    
+  }
+
+  
+  .nav__menu .dropdown:hover > ul { 
+    top: 100%;
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+    overflow: visible;
+    padding: 0 1rem;  
+  }
+
+
+  
+  .nav__menu .dropdown ul li {
+    padding: .7rem;
+    background-color: #ff4136;
+    position: relative;
+  }
+  
+  .nav__menu .dropdown ul li:hover {
+    transition: all 0.5s ease;
+    background-color: #8dbdff;
+  }
+  
+  .nav__menu .dropdown ul li a {
+    display: block;
+    color: #fff;  
+    text-transform: capitalize;
+  }
+
+  .nav__menu .dropdown ul li a:hover {
+    display: block;
+    color: rgb(199, 224, 245); 
+  }
+  
+  .nav__menu .dropdown > a:after {
+    font-weight: 900;    
+    font-size: .875rem;
+    padding-left: 5px;
+    color: #fff;      
+  }
+
+
+  .nav__menu .dropdown:hover > a:after {
+    font-weight: 900;    
+    font-size: .875rem;
+    padding-left: 5px;
+    color: rgb(124, 124, 124);    
+  }
+
+
+  
+  .nav__menu .dropdown .dropdown > a:after {
+    font-weight: 900;    
+    font-size: .875rem;
+    padding-left: 10px;
+    color: rgb(255, 255, 255);
+  }
+
+
+
+  .nav__menu .dropdown .dropdown:hover > a:after {
+    font-weight: 900;    
+    font-size: .875rem;
+    padding-left: 10px;
+    color: rgb(255, 255, 255);
+  }
+}
+
+
+
+/* Our Programs section  */
+
+.wrappers{
+  height:550px;
+  width: 350px;
+  position: relative;
+  transform-style: preserve-3d;
+    perspective: 1000px;
+}
+@media (max-width: 1200px) {
+
+.container{
+  padding: 20px 0 20px 0 ;
+  width: 90%;
+}
+
+.container .content .right-side{
+ margin: 0 auto;
+}
+#ourProgram{
+  width: 90%;
+}
+
+
+}
+
+@media (max-width:500px) {
+  .innerpad{
+  padding: 20px;
+}
+.back-face .info p{
+  font-size: 15px;
+}
+
+}
+
+.wrappers .cards{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 5px;
+  background: #fff;
+  border-radius: 10px;
+  transform: translateY(0deg);
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  box-shadow: 0px 10px 15px rgba(0,0,0,0.1);
+  transition: transform 0.7s cubic-bezier(0.4,0.2,0.2,1);
+}
+.wrappers:hover > .front-face{
+  transform: rotateY(-180deg);
+}
+.wrappers .cards img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+.wrappers .back-face{
+  display: flex;
+  padding: 1rem;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  transform: rotateY(180deg);
+}
+.wrappers:hover > .back-face{
+  transform: rotateY(0deg);
+}
+.wrappers .back-face img{
+  height: 150px;
+  width: 150px;
+  padding: 5px;
+  border-radius: 50%;
+  background: linear-gradient(375deg, #1cc7d0, #2ede98);
+}
+.wrapper .back-face .info{
+  text-align: center;
+}
+.back-face .info .title{
+  font-size: 30px;
+  font-weight: 500;
+}
+.back-face ul{
+  display: flex;
+}
+.back-face ul a{
+  display: block;
+                                   
+  width: 40px;
+  color: #fff;
+  text-align: center;
+  margin: 0 5px;
+  line-height: 38px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  background: linear-gradient(375deg, #1cc7d0, #2ede98);
+  transition: all 0.5s ease;
+}
+.back-face ul a:hover{
+  color: #1cc7d0;
+  border-color: #1cc7d0;
+  background: linear-gradient(375deg, transparent, transparent);
+}
+
+
+
+/* Footer  */
+
+footer {
+  bottom: 0;
+  background-color: #4070F4;
+  color: #fff;
+  font-size: 16px;
+  padding: 20px 0;
+}
+
+.containerFooter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 auto;
+  padding: 0 10px auto;
+}
+
+.footer-logo img {
+  width: 150px;
+}
+
+.footer-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.footer-nav ul li:last-child {
+  margin-right: 0;
+}
+
+.footer-nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-social ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.footer-social ul li {
+  margin-right: 20px;
+}
+
+.footer-social ul li:last-child {
+  margin-right: 0;
+}
+
+.footer-social ul li a {
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.footer-social ul li a i {
+  transition: all 0.3s ease-in-out;
+}
+
+.footer-social ul li a:hover i {
+  transform: scale(1.2);
+}
+
+
+h3{
+    font-size:50px;
+    font-weight: bold;
+    text-align:center;
+    color:black;
+    padding:1%;
+  }
+
+  .hr2{
+    background-color:#ff4136;
+    height: 1rem;
+    box-shadow:-3px 5px 15px #000;
+    margin: 1rem;
+  }
+ 
+
+</style>
+</head>
+
+<body class="bg-white">
+
+  <!-- nav -->
+  <section>
+    <header class="top-0 fixed drop-shadow-lg">
+      <div class="nav__container">
+        <div class="nav__mobile">
+          <div class="nav__logo"><img src="wwdImages/BrandLogo.jpeg" alt="" class="w-48"></div>
+          <div class="nav__btn">
+            <a aria-label="Mobile menu" class="nav-toggle fade"><span></span><span class="mrg"></span><span
+                class="mrg"></span></a>
+          </div>
+        </div>
+        <nav class="menu-toggle z-[10] ">
+          <ul class="nav__menu">
+            <li><a href="../index.html" class="font-bold">Home</a></li>
+            <li class="dropdown  flex-row"><a href="" class="font-bold">About Us <span><i
+                    class="fa-solid fa-chevron-down"></i></i></span></a>
+              <ul class="list-none">
+                <li><a href="../index.html#aboutUs">Our Team</a></li>
+                <li><a href="../index.html#ourAdvisors">Our Advisors</a></li>
+              </ul>
+            </li>
+            <li><a href="/WhatWeDo/wwd.html" class="font-bold">Our Work</a></li>
+            <li><a href="../gallery/gallery.html" class="font-bold">Gallery</a></li>
+            <li><a href="../index.html#contactUS" class="font-bold">Contact Us</a></li>
+          </ul>
+        </nav>
+      </div>
+  </section>
+
+
+  <section class="max-w-[1280px] bg-opacity-50 w-[90%] mb-6 mx-auto bg-[#eee] rounded-lg">
+    <h3 class="md:pt-[9rem] pt-[7rem] lg:text-5xl text-3xl font-bold text-center text-black drop-shadow-lg "><span
+        class=" "> The</span> <span class="text-[#ff4136] lg:text-6xl text-4xl">Problems !</span> </h3>
+    <hr class="hr2">
+    <section class="text-gray-700 body-font mt-10">
+      <div class="container px-5 pb-24 mx-auto">
+
+        <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
+          <div class="p-4 md:w-1/3 md:mb-0 mb-6 flex flex-col text-center items-center">
+            <div
+              class="w-40 h-40 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
+              <img src="wwdImages/racist bullying-amico (1).png" alt="">
+            </div>
+            <div class="flex-grow">
+              <p class="leading-relaxed text-base text-center md:px-4 px-0">Inequitable Access and
+                Safety for Marginalized
+                Children hindering their
+                learning and overall
+                development.</p>
+              <!-- <a class="mt-3 text-[#ff4136] inline-flex items-center">Learn More
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </a> -->
+            </div>
+          </div>
+          <div class="p-4 md:w-1/3 md:mb-0 mb-6 flex flex-col text-center items-center">
+            <div
+              class="w-40 h-40 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
+              <img src="wwdImages/Teaching-pana (1).png" alt="">
+
+            </div>
+            <div class="flex-grow">
+              <p class="leading-relaxed text-base md:px-4 px-0">Limited Training in
+                Inclusive and
+                Intersectional Pedagogy
+                for In-service and
+                pre-service teachers</p>
+              <!-- <a class="mt-3 text-[#ff4136]  inline-flex items-center">Learn More
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </a> -->
+            </div>
+          </div>
+          <div class="p-4 md:w-1/3 md:mb-0 mb-6 flex flex-col text-center items-center">
+            <div
+              class="w-40 h-40 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
+              <img src="wwdImages/Classroom-cuate (1).png" alt="">
+            </div>
+            <div class="flex-grow">
+              <p class="leading-relaxed text-base md:px-4 px-0">Insufficient resources and
+                materials to facilitate
+                deep and meaningful
+                conversations around
+                inclusion</p>
+              <!-- <a class="mt-3 text-[#ff4136]  inline-flex items-center">Learn More
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </section>
+
+  <section class="max-w-[1280px] bg-opacity-50 w-[90%] mb-6 mx-auto bg-white rounded-lg">
+    <h3 class="lg:text-5xl text-3xl font-bold text-center text-black drop-shadow-lg  "><span class=" "> Theory Of</span>
+      <span class="text-[#ff4136] lg:text-6xl text-4xl">Change...</span>
+    </h3>
+    <hr class="hr2">
+    <section class="text-gray-700 body-font mt-10">
+      <div class="container px-5 pb-24 mx-auto">
+
+        <div class="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4">
+          <div class="p-4 md:w-1/3 md:mb-0 mb-6 flex flex-col text-center items-center">
+            <div
+              class="w-40 h-40 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
+              <img src="wwdImages/Kids reading-pana.png" alt="">
+            </div>
+            <div class="flex-grow">
+              <p class="leading-relaxed text-base text-justify px-0">Building Self-Aware, Inclusive, Engaged
+                Student Leaders by providing students
+                with opportunities for self-reflection,
+                identity exploration, and leadership
+                development, we aim to nurture their
+                self-awareness, empathy, and
+                understanding of diverse perspectives.</p>
+              <!-- <a class="mt-3 text-[#ff4136] inline-flex items-center">Learn More
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </a> -->
+            </div>
+          </div>
+          <div class="p-4 md:w-1/3 md:mb-0 mb-6 flex flex-col text-center items-center">
+            <div
+              class="w-40 h-40 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
+              <img src="wwdImages/Cohort analysis-amico.png" alt="">
+
+            </div>
+            <div class="flex-grow">
+              <p class="leading-relaxed text-base px-0 text-justify">Training teachers with the
+                knowledge, skills, and mindsets to
+                create inclusive and affirming
+                learning environments for all
+                students with comprehensive
+                professional development and
+                ongoing support. We aim to address
+                the unique needs of all students.</p>
+              <!-- <a class="mt-3 text-[#ff4136] inline-flex items-center">Learn More
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </a> -->
+            </div>
+          </div>
+          <div class="p-4 md:w-1/3 md:mb-0 mb-6 flex flex-col text-center items-center">
+            <div
+              class="w-40 h-40 inline-flex items-center justify-center rounded-full bg-indigo-100 text-indigo-500 mb-5 flex-shrink-0">
+              <img src="wwdImages/Group discussion-rafiki (1).png" alt="">
+            </div>
+            <div class="flex-grow">
+              <p class="leading-relaxed text-base px-0  text-justify">Develop and implement an equity
+                curriculum that facilitates rigorous
+                and deep conversations on inclusion,
+                diversity, and social justice. Through
+                this curriculum, we focus on develop
+                a sense of agency in all stakeholders
+                through dialogue, reflection and
+
+                action.</p>
+              <!-- <a class="mt-3 text-[#ff4136] inline-flex items-center">Learn More
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- footer -->
+  </section>
+
+  <!-- Our Vision Section  -->
+
+  <!-- Container for demo purpose -->
+<div class="container-or-vission mb-24 mx-auto md:px-6 max-w-[1280px]">
+  <!-- Section: Design Block -->
+
+    <div class="mb-16 px-10 flex flex-wrap">
+      <div class="mb-6 w-full shrink-0 grow-0 basis-auto lg:mb-0 lg:w-6/12 lg:pr-6">
+        <div
+          class="ripple relative overflow-hidden rounded-lg bg-cover bg-[50%] bg-no-repeat shadow-lg dark:shadow-black/20"
+          data-te-ripple-init data-te-ripple-color="light">
+          <img src="./wwdImages/nikhita-s-NsPDiPFTp4c-unsplash.jpg" class="w-full" alt="Louvre" />
+          <a href="#!">
+            <div
+              class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-[hsl(0,0%,98.4%,0.2)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100">
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="w-full shrink-0 grow-0 basis-auto lg:w-6/12 lg:pl-6">
+        <h3 class="mb-4 md:text-4xl text-2xl font-bold drop-shadow-lg">Our <span class="text-[#ff4136]">
+          Vision!
+        </span> </h3>
+        <div class="mb-4 flex items-center text-sm font-medium text-danger dark:text-danger-500">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+            stroke="currentColor" class="mr-2 h-5 w-5">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M12.75 3.03v.568c0 .334.148.65.405.864l1.068.89c.442.369.535 1.01.216 1.49l-.51.766a2.25 2.25 0 01-1.161.886l-.143.048a1.107 1.107 0 00-.57 1.664c.369.555.169 1.307-.427 1.605L9 13.125l.423 1.059a.956.956 0 01-1.652.928l-.679-.906a1.125 1.125 0 00-1.906.172L4.5 15.75l-.612.153M12.75 3.031a9 9 0 00-8.862 12.872M12.75 3.031a9 9 0 016.69 14.036m0 0l-.177-.529A2.25 2.25 0 0017.128 15H16.5l-.324-.324a1.453 1.453 0 00-2.328.377l-.036.073a1.586 1.586 0 01-.982.816l-.99.282c-.55.157-.894.702-.8 1.267l.073.438c.08.474.49.821.97.821.846 0 1.598.542 1.865 1.345l.215.643m5.276-3.67a9.012 9.012 0 01-5.276 3.67m0 0a9 9 0 01-10.275-4.835M15.75 9c0 .896-.393 1.7-1.016 2.25" />
+          </svg>
+          Travels
+        </div>
+        <p class="mb-6 text-sm text-neutral-500 dark:text-neutral-400">
+          Published <u>14.01.2022</u> by
+          <a href="#!">Lisa McCartney</a>
+        </p>
+        <p class="mb-6 text-neutral-500 dark:text-neutral-300">
+          We envision a world where every child feels safe, valued, and included in their classroom, regardless of their gender, caste, disability, language, economic background, religion, or any other aspect of their identity.
+        </p>
+      </div>
+    </div>
+
+    <div class="mb-16 px-10 flex flex-wrap lg:flex-row-reverse">
+      <div class="mb-6 w-full shrink-0 grow-0 basis-auto lg:mb-0 lg:w-6/12 lg:pl-6">
+        <div
+          class="ripple relative overflow-hidden rounded-lg bg-cover bg-[50%] bg-no-repeat shadow-lg dark:shadow-black/20"
+          data-te-ripple-init data-te-ripple-color="light">
+          <img src="./wwdImages/jaikishan-patel-2eMemvByB-8-unsplash.jpg" class="w-full" alt="Louvre" />
+          <a href="#!">
+            <div
+              class="absolute top-0 right-0 bottom-0 left-0 h-full w-full overflow-hidden bg-[hsl(0,0%,98.4%,0.2)] bg-fixed opacity-0 transition duration-300 ease-in-out hover:opacity-100">
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="w-full shrink-0 grow-0 basis-auto lg:w-6/12 lg:pr-6">
+        <h3 class="mb-4 md:text-4xl text-2xl font-bold drop-shadow-lg">Our <span class="text-[#ff4136] ">Mission</span> </h3>
+        <div class="mb-4 flex items-center text-sm font-medium text-danger dark:text-danger-500">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2"
+            stroke="currentColor" class="mr-2 h-5 w-5">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M12.75 3.03v.568c0 .334.148.65.405.864l1.068.89c.442.369.535 1.01.216 1.49l-.51.766a2.25 2.25 0 01-1.161.886l-.143.048a1.107 1.107 0 00-.57 1.664c.369.555.169 1.307-.427 1.605L9 13.125l.423 1.059a.956.956 0 01-1.652.928l-.679-.906a1.125 1.125 0 00-1.906.172L4.5 15.75l-.612.153M12.75 3.031a9 9 0 00-8.862 12.872M12.75 3.031a9 9 0 016.69 14.036m0 0l-.177-.529A2.25 2.25 0 0017.128 15H16.5l-.324-.324a1.453 1.453 0 00-2.328.377l-.036.073a1.586 1.586 0 01-.982.816l-.99.282c-.55.157-.894.702-.8 1.267l.073.438c.08.474.49.821.97.821.846 0 1.598.542 1.865 1.345l.215.643m5.276-3.67a9.012 9.012 0 01-5.276 3.67m0 0a9 9 0 01-10.275-4.835M15.75 9c0 .896-.393 1.7-1.016 2.25" />
+          </svg>
+          Travels
+        </div>
+        <p class="mb-6 text-sm text-neutral-500 dark:text-neutral-400">
+          Published <u>12.01.2022</u> by
+          <a href="#!">Anna Doe</a>
+        </p>
+        <p class="text-neutral-500 dark:text-neutral-300">
+          To achieve this vision, our mission is to develop affirmative classrooms and build a community of inclusive educators who are equipped with the knowledge, skills, and tools to create learning environments that support every child's unique needs and strengths.
+        </p>
+      </div>
+    </div>
+  </section>
+  <!-- Section: Design Block -->
+</div>
+<!-- Container for demo purpose -->
+
+  <!-- Our Program section  -->
+
+  <section id="ourProgram" class=" ourProgram mx-auto max-w-[1280px] rounded-[15px] mb-10 mt-4 min-h-[100vh] flex-col justify-center gap-10 flex-wrap items-center gap-10 py-10 bg-[#E6E6FA] 
+                    bg-opacity-50">
+    <div class="">
+      <h3 class="lg:text-6xl text-4xl font-bold text-center text-black drop-shadow-lg ">Our <span
+          class="text-[#ff4136] lg:text-6xl text-4xl"> Program !</span> </h3>
+
+    </div>
+
+    <div class="mt-6 innerpad flex justify-center gap-10 flex-wrap items-center">
+      <div class="wrappers my-6">
+        <div class="cards front-face flex flex-col justify-center items-center text-center">
+          <img src="./wwdImages/Team spirit-bro.png" alt="" class="w-full h-full object-cover ">
+          <div>
+            <i class="fa-solid fa-quote-left text-2xl text-[#ff4136]"></i>
+          </div>
+          <h3 class="font-bold text-2xl drop-shadow-md">AFFIRMATIVE CLASSROOM TRAINING PROGRAMS</h3>
+          <div>
+            <i class="fa-solid fa-quote-right text-2xl text-[#ff4136]"></i>
+          </div>
+          <div class="cards back-face">
+            <div class="info">
+              <div class="title"></div>
+              <p class=" text-justify text-gray-600">Our Affirmative Classroom Training Programs are designed to
+                support new and senior teachers in long term creating more inclusive and equitable learning
+                environments. Our Basic program (8 Weeks) for new teachers covers the foundational principles of
+                affirmative teaching, while our Advanced program (12 Weeks) for experienced teachers and teacher
+                trainers provides more in-depth training on topics such as Culturally Responsive Pedagogy, Restorative
+                Justice, Differentiated Instruction, and Universal Design for Learning. Both programs offer practical
+                strategies and tools that teachers can use to create more inclusive classrooms and support student
+                success. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wrappers my-6">
+        <div class="cards front-face flex flex-col justify-center items-center text-center">
+          <img src="./wwdImages/Brainstorming-amico (1).png" alt="" class="w-full h-full object-cover ">
+          <div>
+            <i class="left0 fa-solid fa-quote-left text-2xl text-[#ff4136]"></i>
+          </div>
+          <h3 class="font-bold text-2xl text-black drop-shadow-md">EQUITY CURRICULUM
+          </h3>
+          <div>
+            <i class="fa-solid fa-quote-right text-2xl text-[#ff4136]"></i>
+          </div>
+          <div class="cards back-face">
+            <div class="info">
+              <div class="title"></div>
+              <p class=" text-justify text-gray-600">Our Equity Student Curriculum is designed to support teachers and
+                schools in creating more inclusive and equitable learning environments for their students. Our
+                curriculum covers a range of foundational topics for children, including diversity, biases,
+                differences, family, empathy, compassion etc. Our curriculum is designed to be flexible and adaptable
+                to a range of classroom settings and learning needs, and is aligned with national standards and best
+                practices. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wrappers my-6">
+        <div class="cards front-face flex flex-col justify-center items-center text-center">
+          <img src="./wwdImages/End of school-amico (1).png" alt="" class="w-full h-full object-cover ">
+
+          <div>
+            <i class="fa-solid fa-quote-left text-2xl text-[#ff4136]"></i>
+          </div>
+          <h3 class="font-bold text-2xl drop-shadow-md">CENTRES OF ACCEPTANCE SCHOOLS</h3>
+          <div>
+            <i class="fa-solid fa-quote-right text-2xl text-[#ff4136]"></i>
+          </div>
+          <div class="cards back-face">
+            <div class="info">
+              <div class="title"></div>
+              <p class=" text-justify text-gray-600">Our COA Program is designed to empower school leaders,
+                administrators, and teachers to cultivate inclusive and equitable learning environments. We use
+                expert-led training and ongoing support to implement a whole-school approach to inclusion through this
+                program. It includes a comprehensive approach to practical strategies for developing inclusive policies,
+                fostering a positive school climate, amplifying student voices, and building strong partnerships with
+                families and communities. We help schools become beacons of diversity and acceptance, ensuring that all
+                students feel valued, supported, and empowered to thrive academically, socially, and emotionally. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="bg-[#ff4136] py-6">
+    <div class="containerFooter items-center gap-4">
+      <div class="footer-nav">
+        <ul>
+          <li><a href="#">Disclaimer </a></li>
+          <li><a href="#">Privary Policies</a></li>
+        </ul>
+      </div>
+      <div class="flex flex-col gap-2">
+        <div>
+          <p class="text-center mx-auto text-white">Copyright &copy 2023 All Rights reserved by <span class="font-bold">
+              Educators For Equiality
+            </span></p>
+        </div>
+        <p class="md:text-[12px] text-[10px] mx-auto text-[#fff]">Design and Developed By <a
+            href="https://www.linkedin.com/in/sayandeeppaul/" class=" font-bold transition-all duration-300"
+            target="_blank">Sayandeep Paul</a> </p>
+
+      </div>
+      <div class="footer-social">
+        <ul>
+          <li><a href="https://www.facebook.com/projecte4e" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+
+          <li><a href="https://www.instagram.com/project_e4e/?igshid=YmMyMTA2M2Y%3D" target="_blank"><i
+                class="fab fa-instagram"></i></a></li>
+          <li><a
+              href="https://www.linkedin.com/company/educators-for-equality/?viewAsMember=true&fbclid=IwAR0qj5EYBNUtplfyeviReBGeo3Q3VkUgxiBW6i-TQLcf4RnuVLy3eW5A4rw"
+              target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script type="text/javascript">
+    $(".faq-plus").on('click', function () {
+      $(this).parent().parent().find('.faq-body').slideToggle();
+    });
+  </script>
+
+  <script src="JS/swiper-bundle.min.js"></script>
+
+  <script src="wwd.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1948 @@
+<!doctype html>
+<html>
+
+<!-- Designed And Developed By : Sayandeep Paul(email : sayandeep775@gmail.com)
+                                        
+     Supported By:   Santanu Gope(email : santanugope62@gmail.com) 
+                     Mondira Chanda(email : mondirachanda7@gmail.com)-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Educators For Equality</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="https://kit.fontawesome.com/b71d11497b.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css">
+
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Mulish&family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+
+  <link rel="stylesheet" href="css/swiper-bundle.min2.css" />
+
+  <link rel="shortcut icon" href="./imageFolder/ProgramImage/educators-for-equality-website-favicon-color.png"
+    type="image/x-icon">
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+  </script>
+
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("sk6jVEct3W7ZwPudL");
+    })();
+  </script>
+
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+    }
+    body{
+        font-family:"Poppins";
+    }
+    * {
+  margin: 0;
+  padding: 0;
+}
+
+html{ 
+  box-sizing: border-box;
+}
+
+*, *:after, *:before {
+  box-sizing: inherit;
+}
+
+body {
+  width: 100%;
+  background-color: #eee;
+}
+
+
+
+/* Nav Bar  */
+
+
+
+header {
+  width: 100%;
+  position: fixed;
+  z-index: 124;
+  padding: 0;
+  margin: 0;
+  background-color: rgb(255, 255, 255);
+}
+
+
+.nav__container { 
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  flex-direction: column;	
+  justify-content: space-between;
+  align-items: stretch;
+  padding: 20px
+}
+
+
+.nav__mobile .nav__btn {
+  display: block;
+}
+
+
+.nav__mobile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__menu {
+  display: flex;
+  flex-direction: column; 
+  overflow: hidden; 
+ }
+
+.showing {
+  max-height: 37rem;  
+  transition: all .5s;
+}
+
+
+.nav__menu li {
+  list-style: none;
+  position: relative;
+  white-space: nowrap; 
+  padding: 1rem 0 0 0; 
+}
+
+
+.nav__menu li a {
+  display: block;
+  font-size: 1rem;  
+  color: #8dbdff;
+  text-decoration: none;
+}
+
+.nav__menu li a:hover {
+   color: rgb(0, 98, 163);
+
+}
+
+.nav-toggle {
+	display: block;
+	background-color: transparent;	
+	width: 40px;
+	cursor: pointer;
+	padding: 4px;
+}
+
+
+
+.nav-toggle span {
+	position: relative;
+	display: block;
+	height: 4px;
+	border-radius: 35px;
+	width: 100%;
+	margin-top: 0;
+	background-color: #000;
+	transition: all .25s;
+}
+
+
+.nav-toggle span.mrg {
+	margin-top: 5px;
+}
+
+.nav-toggle.open span:first-child { 
+	transform: rotate(45deg) translate(6.2px, 6.2px); 
+}
+
+
+.nav-toggle.open span:nth-child(2) {
+	width: 0%;
+	opacity: 0;
+}
+
+
+.nav-toggle.open span:last-child { 
+	transform: rotate(-45deg) translate(6.2px, -6.2px); 
+}
+
+/* Dropdown */ 
+
+.nav__menu .dropdown ul {
+  display: flex;
+  flex-direction: column;
+  position: static;   
+  padding: 0;
+  max-height: 0px; 
+  overflow: hidden;
+  transition: all .4s;
+}
+
+.nav__menu .dropdown ul.show {
+  max-height: 20rem;
+  transition: all .4s;
+}
+
+
+.nav__menu .dropdown li a {
+  display: block;
+  font-size: .875rem;
+  text-transform: capitalize;
+  color: #222;
+  text-decoration: none;
+}
+
+.nav__menu li a:hover {
+   color: rgb(0, 98, 163);
+
+}
+
+.nav__menu .dropdown > a:after {
+
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;    
+  font-size: .875rem;
+  padding-left: 5px;
+  color: rgb(126, 126, 126);
+}
+
+.nav__menu .dropdown .dropdown > a:after {
+
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;    
+  font-size: .875rem;
+  padding-left: 5px;
+  color: rgb(126, 126, 126);
+}
+
+
+
+.menu-toggle {
+  max-height: 0;
+  overflow: hidden;
+  transition: all .4s ease;
+ 
+}
+
+.menu-toggle.active {
+  max-height: 100vh;
+  transition: all .4s ease;
+  
+}
+ 
+.resize-animation-stopper * {
+  transition: none !important;
+  animation: none !important;
+}
+
+
+@media screen and (min-width: 800px) {
+  .menu-toggle {
+    display: flex !important;    
+    max-height: 100vh;
+    overflow: visible
+  } 
+
+  .nav__container {
+    width: 100%;
+    max-width: 1300px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 10px;
+  }
+  
+  .nav__mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .nav__mobile .nav__btn {
+    display: none;
+  }
+  
+  .nav__logo img {
+    width: 60%;
+  }
+  
+  .nav__menu {
+    display: flex;
+    flex-direction: row;
+    max-height: 100%;
+    overflow: visible;
+  }
+  
+  .nav__menu li {
+    list-style: none;
+    position: relative;
+    white-space: nowrap;
+    padding: 1rem;
+  }
+  
+  
+  .nav__menu li a {
+    font-size: 1rem;
+    color: #8dbdff;
+    text-decoration: none;
+   }
+  
+  .nav__menu li a:hover {
+     color: #ff4136;
+     transition: all 0.5s ease;
+  
+  }
+  
+  
+  /* Dropdown */
+
+
+  .nav__menu .dropdown {
+    position: relative;
+    transition: all 0.5s ease;
+    z-index: 10;
+  }
+  
+  .nav__menu .dropdown ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: -30px;
+    opacity: 0;
+    visibility: hidden;  
+    overflow: visible; 
+    padding: 0 1rem; 
+    transition: all .4s ease ;    
+  }
+
+  
+  .nav__menu .dropdown:hover > ul { 
+    top: 100%;
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+    overflow: visible;
+    padding: 0 1rem;  
+  }
+
+
+  
+  .nav__menu .dropdown ul li {
+    padding: .7rem;
+    background-color: #8dbdff;
+    position: relative;
+  }
+  
+  .nav__menu .dropdown ul li:hover {
+    transition: all 0.5s ease;
+    background-color: #ff4136;
+  }
+  
+  .nav__menu .dropdown ul li a {
+    display: block;
+    color: #fff;  
+    text-transform: capitalize;
+  }
+
+  .nav__menu .dropdown ul li a:hover {
+    display: block;
+    color: rgb(199, 224, 245); 
+  }
+  
+  .nav__menu .dropdown > a:after {
+    font-weight: 900;    
+    font-size: .875rem;
+    padding-left: 5px;
+    color: #fff;      
+  }
+
+
+  .nav__menu .dropdown:hover > a:after {
+    font-weight: 900;    
+    font-size: .875rem;
+    padding-left: 5px;
+    color: rgb(124, 124, 124);    
+  }
+
+
+  
+  .nav__menu .dropdown .dropdown > a:after {
+    font-weight: 900;    
+    font-size: .875rem;
+    padding-left: 10px;
+    color: rgb(255, 255, 255);
+  }
+
+
+
+  .nav__menu .dropdown .dropdown:hover > a:after {
+    font-weight: 900;    
+    font-size: .875rem;
+    padding-left: 10px;
+    color: rgb(255, 255, 255);
+  }
+}
+
+
+
+
+/* Slideshow container */
+
+.wrapper,
+.slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.slide {
+  overflow: hidden;
+}
+.slide::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 10;
+}
+.slide .image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.slide .image img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.slide .image-data {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+  z-index: 100;
+}
+.image-data span.text {
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+}
+.image-data h2 {
+  font-size: 45px;
+  font-weight: 600;
+  color: #fff;
+}
+a.button {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 25px;
+  color: #333;
+  background: #fff;
+  text-decoration: none;
+  margin-top: 25px;
+  transition: all 0.3s ease;
+}
+a.button:hover {
+  color: #fff;
+  background-color: #c87e4f;
+}
+
+/* swiper button css */
+
+
+.nav-btn {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+}
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.4);
+}
+.swiper-button-next {
+  right: 50px;
+}
+.swiper-button-prev {
+  left: 50px;
+}
+.nav-btn::before,
+.nav-btn::after {
+  font-size: 25px;
+  color: #fff;
+}
+.swiper-pagination-bullet {
+  opacity: 1;
+  height: 12px;
+  width: 12px;
+  background-color: #fff;
+  visibility: hidden;
+}
+.swiper-pagination-bullet-active {
+  border: 2px solid #fff;
+  background-color: #8dbdff;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-btn {
+    visibility: hidden;
+  }
+  .swiper-pagination-bullet {
+    visibility: visible;
+  }
+}
+
+
+
+
+/* our advisor  */
+
+.testim{
+    width: 100%;
+}
+.testim .wrap{
+    position: relative;
+    width: 100%;
+    max-width: 1020px;
+    padding: 40px 20px;
+    margin: auto;
+}
+.testim .arrow{
+    display: block;
+    position: absolute;
+    color: #eee;
+    cursor: pointer;
+    font-size: 2em;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all .3s ease-in-out;
+    padding: 5px;
+}
+.testim .arrow:before{
+    cursor: pointer;
+}
+.testim .arrow.left{
+    left: 10px;
+    color: #8dbdff;
+}
+.testim .arrow.right{
+    right: 10px;
+    color: #8dbdff;
+}
+.testim .arrow:hover{
+    color: #eee;
+}
+.testim .dots{
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    bottom: 60px;
+    left: 0;
+    display: block;
+    height: 12px;
+}
+.testim .dots .dot{
+    list-style-type: none;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid #707070;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    position: relative;
+}
+.testim .dots .dot.active,
+.testim .dots .dot:hover{
+background: #8dbdff;
+border-color: #8dbdff;
+}
+
+.testim .dots .dot.active{
+    animation: testim-scale 2s ease-in-out forwards;
+}
+.testim .cont{
+    position: relative;
+    overflow: hidden;
+}
+.testim .cont > div{
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0 0 70px 0;
+    opacity: 0;
+}
+.testim .cont > div.inactive{
+    opacity: 1;
+}
+.testim .cont > div.active{
+    
+    position: relative;
+    opacity: 1;
+    
+}
+.testim .cont div .img img{
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    border-radius: 50%;
+}
+.testim .cont div .img{
+  box-shadow: none;
+  height: 13rem;
+  object-fit: cover;
+  
+}
+.testim .cont div h2{
+  padding:1rem;
+    color: #8dbdff;
+    font-size: x-large;
+    font-weight: bold;
+}
+.testim .cont div p{
+    color: #707070;
+    width: 80%;
+    margin: auto;
+}
+
+.testim .cont div.active .img img{
+    animation: testim-show .5s ease-in-out forwards;
+}
+.testim .cont div.active h2{
+    animation: testim-content-in .4s ease-in-out forwards;
+}
+.testim .cont div.active p {
+    animation: testim-content-in .5s ease-in-out forwards;
+}
+.testim .cont div.inactive .img img{
+    animation: testim-hide .5s ease-in-out forwards;
+}
+.testim .cont div.inactive h2{
+    animation: testim-content-out .4s ease-in-out forwards;
+}
+.testim .cont div.inactive p {
+    animation: testim-content-out .5s ease-in-out forwards;
+}
+
+@keyframes testim-scale {
+    0% {
+        box-shadow: 0px 0px 0px 0px #eee;
+    }
+    35% {
+        box-shadow: 0px 0px 10px 5px #eee;
+    }
+    70% {
+        box-shadow: 0px 0px 10px 5px #8dbdff;
+    }
+    100% {
+        box-shadow: 0px 0px 0px 0px #8dbdff;
+    }
+}
+
+@keyframes testim-content-in {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes testim-content-out {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+}
+@keyframes testim-show {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes testim-hide {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+/* Responsive */
+
+@media all and (max-width: 400px) {
+    p {
+        font-size: 12px;
+    }
+}
+@media all and (max-width: 400px) {
+    .testim .arrow{
+        font-size: 1.5rem;
+    }
+    .testim .cont div p{
+        line-height: 20px;
+        font-size: 12px;
+    }
+}
+
+
+
+/* About Section  */
+
+.slide-container{
+  max-width: 1260px;
+  width: 100%;
+  padding: 40px 0;
+}
+.slide-content{
+  margin: 0 40px;
+  overflow: hidden;
+  border-radius: 25px;
+}
+.card{
+  border-radius: 25px;
+  background-color: #FFF;
+}
+.image-content,
+.card-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 14px;
+}
+.image-content{
+  position: relative;
+  row-gap: 5px;
+  padding: 25px 0;
+}
+.overlay{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #8dbdff;
+  border-radius: 25px 25px 0 25px;
+}
+.overlay::before,
+.overlay::after{
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: -40px;
+  height: 40px;
+  width: 40px;
+  background-color: #8dbdff;
+}
+.overlay::after{
+  border-radius: 0 25px 0 0;
+  background-color: #FFF;
+}
+.card-image{
+  position: relative;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background: #FFF;
+  padding: 3px;
+}
+.card-image .card-img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #8dbdff;
+}
+.name{
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+}
+.description{
+  font-size: 14px;
+  color: #707070;
+  text-align: justify;
+
+}
+.button{
+  border: none;
+  font-size: 16px;
+  color: #FFF;
+  padding: 8px 16px;
+  background-color: #8dbdff;
+  border-radius: 6px;
+  margin: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.button:hover{
+  background: #265DF2;
+}
+
+.swiper-navBtn{
+  color: #8dbdff;
+  transition: color 0.3s ease;
+}
+.swiper-navBtn:hover{
+  color: #4070F4;
+}
+.swiper-navBtn::before,
+.swiper-navBtn::after{
+  font-size: 35px;
+}
+
+.swiper-pagination-bullet{
+  background-color: #E6E6FA;
+  opacity: 1;
+}
+.swiper-pagination-bullet-active{
+  background-color: #8dbdff;
+}
+
+#next{
+right: 0;
+}
+#prev{
+left: 0;
+}
+
+@media screen and (max-width: 770px) {
+  .slide-content{
+    margin: 0 10px;
+  }
+  .slide-content{
+    width: 80%;
+    margin:0 auto ;
+  }
+
+  #prev{
+    left: 5px;
+  }
+  #next{
+    right: 5px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .slide-content{
+    width: 80%;
+    margin:0 auto ;
+  }
+  .description{
+  font-size: 12px;
+}
+}
+
+
+
+
+/* FAQ section  */
+
+.container .content .right-side{
+  width: 30%;
+}
+.content .right-side .topic-text{
+  font-size: 23px;
+  font-weight: 600;
+  color: #8dbdff;
+}
+.right-side .input-box{
+  height: 50px;
+  width: 100%;
+  margin: 12px 0;
+}
+.right-side .input-box input,
+.right-side .input-box textarea{
+  height: 100%;
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  background: #F0F1F8;
+  border-radius: 6px;
+  padding: 0 15px;
+  resize: none;
+}
+.right-side .message-box{
+  min-height: 110px;
+}
+.right-side .input-box textarea{
+  padding-top: 6px;
+}
+.right-side .button{
+  display: inline-block;
+  margin-top: 12px;
+}
+.right-side .button input[type="button"]{
+  color: #fff;
+  font-size: 18px;
+  outline: none;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  background: #8dbdff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.button input[type="button"]:hover{
+  background: #4070F4;
+}
+.container .content{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.container{
+  width: 85%;
+  background: #fff;
+  border-radius: 6px;
+  padding: 20px 40px 20px 40px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 760px) {
+
+  .container{
+    padding: 20px 0 20px 0 ;
+  }
+
+ .container .content .right-side{
+   width: 75%;
+   margin: 0 auto;
+ }
+ 
+}
+
+@media (max-width:400px) {
+  .faq-body{
+  font-size: 12px;
+}
+}
+
+
+/* FAQ section  */
+
+.faq-item{
+        margin-bottom: 40px;
+        margin-top: 40px;
+      }
+      .faq-body{
+        display: none;
+        margin-top: 30px;
+      }
+      .faq-wrapper{
+        width: 90%;
+        margin: 0 auto;
+      }
+      .faq-inner{
+        padding: 30px;
+        background: #eaeaf9;
+      }
+      .faq-plus{
+        float: right;
+        font-size: 1.4em;
+        line-height: 1em;
+        cursor: pointer;
+      }
+      hr{
+        background-color: #9b9b9b;
+      } 
+      #sendUs{
+        color: #8dbdff;
+      }
+      #sendUsBtn{
+        background-color: #8dbdff;
+      }
+
+
+
+  /* Contact us  */
+
+  .contact{
+    font-size: 40px;
+    margin: auto;
+    font-weight: bold;
+   }
+
+   .head{
+       height: 45px;
+       margin-top: 2rem ;
+   }
+  
+  .contact-container {
+    display: flex;
+    align-items: center;
+    max-width: 12000px;
+    margin: 2rem auto;
+    background-color: #f0f0f7;
+    margin-top:0rem;
+    padding: 40px 16px;
+    border-radius: 15px;
+    
+  }
+  .cnt-us{
+    min-height: 100vh;
+    padding-top:1rem;
+    padding-bottom: 1rem;
+    background-color: white;
+
+  }
+  .img{
+    width: 40rem;
+    border-radius: 15px;
+    height: 27rem;
+    margin: auto;
+    box-shadow:-3px 5px 15px #000;
+}
+  .contact-container .contact-left {
+    padding: 32px 24px;
+  }
+  .contact-left img{
+    background-color: white;
+  }
+  
+  .contact-container h2 {
+    margin-top: 8px;
+    margin-bottom: 32px;
+    font-size: 22px;
+  }
+  
+  .contact-container h2.contact-left-heading {
+    color: #fff;
+  }
+  
+  .contact-container .contact-right {
+    padding-left: 32px;
+  }
+  
+  .contact-container .contact-right .social-icons a {
+    font-size: 32px;
+    color: #8dbdff;
+    margin-right: 12px;
+    display: inline-block;
+    transition: all 300ms;
+  }
+  
+  .contact-container .contact-right .social-icons a:hover {
+    transform: scale(1.15);
+  }
+  @media (max-width: 1400px){
+    .cnt-us{
+      padding-bottom: 1rem;
+    }
+    
+  }
+  @media (max-width: 1200px){
+    .contact-container {
+
+width: 85%;
+}
+.cnt-us{
+      padding-bottom: 1rem;
+    }
+
+    .img{
+      border-radius: 0;
+      display: fixed;
+      height: 27rem;
+      block-size: auto;
+      box-shadow:-3px 5px 15px #000;
+    }
+  }
+  @media (max-width: 900px) {
+    .cnt-us{
+      padding-bottom: 1rem;
+    }
+    .contact-container {
+      flex-direction: column;
+      padding: 1rem 30px;
+      width: 85%;
+    }
+  
+    .contact-container .contact-left {
+      border-radius: 0;
+      width: 100%;
+    }
+    .img{
+      border-radius: 15px;
+      width: 100%;
+      block-size: auto;
+      box-shadow:-3px 5px 15px #aca9a9;
+    }
+    .contact-container .contact-right {
+      width: 100%;
+      padding: 50px 0;
+    }
+    .head{
+      width: 100%;
+    }
+
+    .contact{
+      text-align: center;
+    }
+  }
+  
+
+/* footer  */
+
+footer {
+  bottom: 0;
+  background-color: #8dbdff;
+  color: #fff;
+  font-size: 16px;
+  padding: 20px 0;
+}
+
+.containerFooter {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0 auto;
+  padding: 0 10px auto;
+}
+
+.footer-logo img {
+  width: 150px;
+}
+
+.footer-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.footer-nav ul li:last-child {
+  margin-right: 0;
+}
+
+.footer-nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-social ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.footer-social ul li {
+  margin-right: 20px;
+}
+
+.footer-social ul li:last-child {
+  margin-right: 0;
+}
+
+.footer-social ul li a {
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.footer-social ul li a i {
+  transition: all 0.3s ease-in-out;
+}
+
+.footer-social ul li a:hover i {
+  transform: scale(1.2);
+}
+  </style>
+
+</head>
+
+<body class="max-w-[100vw] bg-white overflow-x-hidden">
+
+  <!-- navBar  -->
+
+  <header id="header" class=" drop-shadow-lg">
+    <div class="nav__container">
+      <div class="nav__mobile">
+        <div class="nav__logo"><img src="imageFolder/BrandLogo.jpeg" alt="" class="w-48"></div>
+        <div class="nav__btn">
+          <a aria-label="Mobile menu" class="nav-toggle fade" style="opacity: 1;"><span></span><span
+              class="mrg"></span><span class="mrg"></span></a>
+        </div>
+      </div>
+      <nav class="menu-toggle z-[10] ">
+        <ul class="nav__menu">
+          <li><a href="#Home" class="font-bold">Home</a></li>
+          <li class="dropdown  flex-row"><a href="" class="font-bold">About Us <span><i
+                  class="fa-solid fa-chevron-down"></i></i></span></a>
+            <ul class="list-none">
+              <li><a href="#aboutUs">Our Team</a></li>
+              <li><a href="#ourAdvisors">Our Advisors</a></li>
+            </ul>
+          </li>
+          <li><a href="./WhatWeDo/wwd.html" class="font-bold">Our Work</a></li>
+          <li><a href="./gallery/gallery.html" class="font-bold">Gallery</a></li>
+          <li><a href="#contactUS" class="font-bold">Contact Us</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Home Section  -->
+
+  <section id="Home" class="main swiper mySwiper h-[100vh]">
+    <div class="wrapper swiper-wrapper">
+      <div class="slide relative swiper-slide">
+        <img src="./imageFolder/HomeSectionImages/pexels-yogendra-singh-3231358.jpg" alt=""
+          class="image w-[100%] h-[100%] object-cover" />
+        <div class="image-data ">
+          <span class="text"></span>
+          <h2 class="drop-shadow-lg ">
+            Educators For Equality
+          </h2>
+          <p class="2xl:max-w-[1000px] max-w-[600px] text-center mx-auto text-[#efefef] mt-4 md:px-0 px-2">
+
+            Join us in our mission to build a more equitable and inclusive future for all Indian children. Explore our
+            programs, learn about our team, and discover how you can get involved today. Together, we can make a
+            difference.
+          </p>
+        </div>
+      </div>
+      <div class="slide swiper-slide">
+        <img src="./imageFolder/HomeSectionImages/pexels-yogendra-singh-2450427.jpg" alt=""
+          class="image w-[100%] h-[100%] object-cover" />
+        <div class="image-data ">
+          <span class="text"></span>
+          <h2 class="drop-shadow-lg">
+            Educators For Equality
+          </h2>
+          <p class="2xl:max-w-[1000px] max-w-[600px] text-center mx-auto text-[#efefef] mt-4 md:px-0 px-2">
+
+            Join us in our mission to build a more equitable and inclusive future for all Indian children. Explore our
+            programs, learn about our team, and discover how you can get involved today. Together, we can make a
+            difference.
+          </p>
+        </div>
+      </div>
+      <div class="slide swiper-slide">
+        <img src="./imageFolder/HomeSectionImages/pexels-sangeet-rao-16103650.jpg" alt=""
+          class="image w-[100%] h-[100%] object-cover" />
+        <div class="image-data ">
+          <span class="text"></span>
+          <h2 class="drop-shadow-lg">
+            Educators For Equality
+          </h2>
+          <p class="2xl:max-w-[1000px] max-w-[600px] text-center mx-auto text-[#efefef] mt-4 md:px-0 px-2">
+
+            Join us in our mission to build a more equitable and inclusive future for all Indian children. Explore our
+            programs, learn about our team, and discover how you can get involved today. Together, we can make a
+            difference.
+          </p>
+        </div>
+      </div>
+      <div class="slide swiper-slide">
+        <img src="./imageFolder/HomeSectionImages/pexels-yogendra-singh-3231359.jpg" alt=""
+          class="image w-[100%] h-[100%] object-cover" />
+        <div class="image-data ">
+          <span class="text"></span>
+          <h2 class="drop-shadow-lg">
+            Educators For Equality
+          </h2>
+          <p class="2xl:max-w-[1000px] max-w-[600px] text-center mx-auto text-[#efefef] mt-4 md:px-0 px-2">
+
+            Join us in our mission to build a more equitable and inclusive future for all Indian children. Explore our
+            programs, learn about our team, and discover how you can get involved today. Together, we can make a
+            difference.
+          </p>
+        </div>
+      </div>
+      <div class="slide swiper-slide">
+        <img src="./imageFolder/HomeSectionImages/pexels-yogendra-singh-6196030.jpg" alt=""
+          class="image w-[100%] h-[100%] object-cover" />
+        <div class="image-data ">
+          <span class="text"></span>
+          <h2 class="drop-shadow-lg">
+            Educators For Equality
+          </h2>
+          <p class="2xl:max-w-[1000px] max-w-[600px] text-center mx-auto text-[#efefef] mt-4 md:px-0 px-2">
+
+            Join us in our mission to build a more equitable and inclusive future for all Indian children. Explore our
+            programs, learn about our team, and discover how you can get involved today. Together, we can make a
+            difference.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="swiper-button-next nav-btn text-white drop-shadow-lg"></div>
+    </div>
+    <div>
+      <div class="swiper-button-prev nav-btn text-white drop-shadow-lg"></div>
+    </div>
+
+    <div class="swiper-pagination"></div>
+  </section>
+
+
+
+  <div class="max-w-[1280px] mx-auto">
+
+    <!-- Quatation  -->
+
+
+    <section class="relative bg-[#eaeaf9] bg-opacity-50 mt-10 mx-auto rounded-[15px] w-[94%] pb-4">
+
+      <div class="relative w-11/12 max-w-[1300px] mx-auto md:py-14 py-8">
+
+        <img src="assets/feature-section1-dottedrows.png" alt="" width="200px"
+          class="absolute top-[8rem] left-[2rem] -z-[10]">
+
+        <h2 class="font-poppins font-bold md:text-5xl md:mb-2 mb-10 text-3xl text-black text-center">An <span
+            class="text-[#8dbdff] ">Experience</span> </h2>
+
+        <div class="w-6 h-1 bg-greenLight text-center mt-4 mb-6 mx-auto">
+        </div>
+
+        <!-- main content  -->
+
+        <div
+          class="flex flex-col gap-6 md:flex-row max-w-[960px] mx-auto items-center my-6 lg:px-0 px-6  justify-around">
+
+          <!-- left part  -->
+
+          <img src="imageFolder/ProgramImage/Bell Hooks.jpg" alt="" loading="lazy"
+            class="md:w-[320px] md:h-[420px] w-[200px] h-[200px] md:rounded-lg rounded-full object-cover">
+
+          <!-- right part  -->
+
+          <div class="max-w-[400px] flex flex-col">
+
+            <img src="imageFolder/images/quotes.svg" alt="" width="35px" height="50px" class="mb-2">
+
+            <p class="font-poppins md:text-2xl text-xl text-[#8dbdff] opacity-80 mb-4">I celebrate teaching that enables
+              transgressions – a movement against and beyond boundaries. It is that movement which makes education the
+              practice of freedom. </p>
+
+            <!-- <a href="" class="text-graytext italic">Learn More</a> -->
+
+            <h3 class="font-poppins font-extrabold font-2xl">Bell Hooks</h3>
+            <p class="font-poppins font-medium">Author, Theorist, Educator, and Social Critic</p>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div
+        class="flex flex-col-reverse gap-6 md:flex-row max-w-[960px] mx-auto items-center lg:px-0 px-6 bb-10  justify-around">
+
+
+
+        <!-- right part  -->
+
+        <div class="max-w-[400px] flex flex-col">
+
+          <img src="imageFolder/images/quotes.svg" alt="" width="35px" height="50px" class="mb-2">
+
+          <p class="font-poppins text-black opacity-80 mb-4 text-justify">At Educators For Equality, we empower students
+            and educators alike. We nurture students to become self-aware, rigorous leaders, inclusive community
+            builders, and engaged civic citizens.
+            <br>
+            Through inclusive pedagogies and mentorship, we equip students with the skills needed to thrive in a diverse
+            world. Simultaneously, we support educators with training and resources to create inclusive classrooms and
+            foster positive learning experiences. Together, we build an equitable and inclusive educational system that
+            prepares students for success and active participation in society.
+          </p>
+        </div>
+
+        <!-- left part  -->
+
+        <img src="imageFolder/ProgramImage/Online test-rafiki.png" alt="" loading="lazy"
+          class="md:w-[320px] md:h-[420px] w-[200px] h-[200px] md:rounded-lg rounded-full object-cover">
+
+      </div>
+
+    </section>
+
+
+
+
+    <!-- Our advisors  -->
+
+    <div id="ourAdvisors"
+      class="w-[90vw] mx-auto  my-6 pt-10 max-w-[1200px] rounded-[15px] bg-[#eaeaf9] min-h-[80vh] text-[16px] bg-opacity-50">
+      <h3 class="md:text-5xl text-3xl font-bold text-center text-black drop-shadow-lg "><span class=" "> Our</span>
+        <span class="text-[#8dbdff] md:text-6xl text-4xl">Advisors...</span>
+      </h3>
+      <section class="testim mt-10" id="testim">
+        <div class="wrap">
+
+          <span id="right-arrow" class="arrow right fa fa-chevron-right"></span>
+          <span id="left-arrow" class="arrow left fa fa-chevron-left"></span>
+
+          <ul class="dots" id="testim-dots">
+            <li class="dot active"></li>
+            <li class="dot"></li>
+            <li class="dot"></li>
+            <li class="dot"></li>
+            <li class="dot"></li>
+          </ul>
+
+          <div class="cont" id="testim-content">
+
+            <div class="active">
+              <div class="img"><img src="imageFolder/advisors/Mainak Roy.jpg" class="object-cover "></div>
+              <h2>Mainak Roy</h2>
+              <p class="text-center mb-4">(He/Him)</p>
+              <p class="sm:text-[15px] text-[12px] text-justify text-black ">Mainak, the Co-Founder and CEO of Simple
+                Education Foundation (SEF), is a visionary leader dedicated to transforming education for underserved
+                communities. With a background as a Teach For India Fellow and Program Manager, Mainak brings invaluable
+                experience to his work with government schools. His expertise in fundraising, communications, strategy,
+                and project development drives SEF's mission forward. As an Acumen India Fellow, Mainak is part of a
+                network of social impact leaders committed to creating positive change. When he's not working, Mainak
+                finds solace in reading and listening to music. Through his unwavering passion and leadership, Mainak is
+                helping us shape E4E's path to provide equal educational opportunities and empower the next generation
+                of teacher leaders.
+              </p>
+            </div>
+
+            <div>
+              <div class="img"><img src="imageFolder/advisors/Raisha Galib.jpg" class="object-cover "></div>
+              <h2>Raisha Galib</h2>
+              <p class="sm:text-[15px] text-[12px] text-center mb-4">(She/Her)</p>
+              <p class="text-justify text-black">Raisha Galib is the Senior Program Manager at Teach For India (TFI),
+                based in Delhi. With her exceptional leadership skills and passion for creating a positive impact, she
+                leads the programmatic strategy and operations for TFI in the city. Her deep commitment to coaching and
+                team-building drives her efforts in designing effective programs that cater to the needs of under-served
+                children. Outside of her professional commitments, Raisha finds joy and rejuvenation in immersing
+                herself in nature. She has a profound love for bird-watching, embracing the beauty and diversity of
+                avian species. Raisha is supporting E4E with program strategy, team building, people development etc.
+              </p>
+            </div>
+
+            <div>
+              <div class="img"><img src="imageFolder/advisors/Rathi.jpeg" class="object-cover "></div>
+              <h2>Rathi Neha</h2>
+              <p class="text-center mb-4">(They/Them)</p>
+              <p class="sm:text-[15px] text-[12px] text-justify text-black">Rathi serves as an Associate Director -
+                Programs at Slam Out Loud, an organisation focused on social and emotional learning (SEL) through art.
+                They lead a team responsible for designing and implementing programs that empower teachers through art
+                in government schools. Their journey started as a Teach for India fellow and has since involved
+                mentoring 10 fellowship programs in various contexts and locations throughout the country. They have
+                also coached Edupreneurs, built high-performing teams, and continually developed themselves as an
+                educator and an individual. They are a certified coach affiliated by the International Coaching
+                Federation (ICF). Rathi is helping E4E to establish an ecosystem where every child finds a safe space in
+                their classroom, irrespective of their identities.</p>
+            </div>
+
+            <div>
+              <div class="img"><img src="imageFolder/advisors/Sudipta Das.jpg" class="object-cover "></div>
+              <h2>Sudipto Das</h2>
+              <p class="text-center mb-4">(They/Them)</p>
+              <p class="text-justify text-black sm:text-[15px] text-[12px]">Sudipta is a Dalit queer feminist with six
+                years of experience working on key themes of sexual and reproductive health and rights (SRHR), gender
+                and sexuality rights, communications, and advocacy. They are a trainer, writer, and advocate for social
+                justice for marginalised communities. They have worked intensively in building the leadership of young
+                people in feminist youth-led action and advocating for the legal rights and entitlements of queer and
+                trans people in India. Sudipta started working in the development space as an India fellow as a trainer
+                to prevent sexual violence against children and help in their rehabilitation. Sudipta is mentoring E4E
+                to build advocacy and communication around intersectional inclusive education.
+              </p>
+            </div>
+
+            <div>
+              <div class="img"><img src="imageFolder/advisors/Aritra.jpg" class="object-cover "></div>
+              <h2>Aritra Chatterjee</h2>
+              <p class="text-center mb-4">(She/They)</p>
+              <p class="text-justify text-black md:font-[15px] font-[12px]">Aritra Chatterjee (she/they) is a
+                trans-rights activist and mental health professional. She is a trained Clinical Psychologist based in
+                Kolkata. She has experience with mental health research, advocacy and working with clients across
+                different spectra of mental health issues. Her interest lies in queering mental healthcare systems and
+                pushing the walls for affirmative care for gender and sexual minorities. She has published her scholarly
+                work on affirmative care in various national and international journals. Aritra helps E4E to deliver its
+                mission of reaching all children in underserved classrooms by incorporating trauma-informed practices.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    </div>
+
+
+    <!-- About Section  -->
+
+
+    <div id="aboutUs" class=" my-4">
+      <h3 class="my-6 md:text-5xl text-3xl font-bold text-center text-black drop-shadow-lg "><span
+          class="text-[#8dbdff] md:text-6xl text-4xl "> Meet</span> Our Team !</h3>
+
+
+      <div id="aboutUs" class="slide-container swiper">
+
+        <div class="slide-content ">
+          <div class="card-wrapper swiper-wrapper">
+
+            <div class="card swiper-slide">
+              <div class="image-content">
+                <span class="overlay"></span>
+
+                <div class="card-image">
+                  <img src="imageFolder/TeamMembers/Pratyay.jpg" alt="" class="card-img object-cover">
+                </div>
+              </div>
+
+              <div class="card-content">
+                <h2 class="name font-bold">PRATYAY MALAKAR</h2>
+                <p class="text-center ">(She/ They)</p>
+                <p class="text-[#8dbdff] text-center my-2">Co-Founder and Director, Curriculum and Training</p>
+                <p class="description text-justify md:text-[14px] text-[12px]">Pratyay is a educator, researcher and
+                  teacher coach who previously
+                  served as a Teach For India Fellow from 2019 to 2021, where she honed her skills in teacher
+                  development, program design, people management, and inclusive education.
+                  She is the founder of
+                  Educators For Equality and leads program and people vertical at E4E. She holds a Masters' in Gender
+                  Studies from RGNIYD, Chennai. Pratyay strongly believes in the power of education, training, advocacy,
+                  and collective action in creating inclusive classrooms through affirmative pedagogy.
+                </p>
+
+                <button class="button"><a href="mailto:pratyay.m@educatorsforequality.in"
+                    class="hover:text-white">Contact Me</a></button>
+              </div>
+            </div>
+            <div class="card swiper-slide">
+              <div class="image-content">
+                <span class="overlay"></span>
+
+                <div class="card-image">
+                  <img src="imageFolder/TeamMembers/Rajpriya.jpg" alt="" class="card-img object-cover">
+                </div>
+              </div>
+
+              <div class="card-content">
+                <h2 class="name font-bold">RAJPRIYA DAS</h2>
+                <p class="text-center">(She/ Her)</p>
+                <p class="text-[#8dbdff] text-center my-2">Co-Founder and Director, Curriculum and Training</p>
+                <p class="description text-justify md:text-[14px] text-[12px]">Rajpriya is an educator, a bookworm and a
+                  learner forever. She
+                  believes in the power of voice and lived experiences. She is passionate about inclusion, inclusive
+                  education and believes that her purpose is to serve all children. In her free time you will see her
+                  crotchet, binge watch series or simply read! She holds a M.Phil in Sociology from Jadavpur University.
+                  She has worked as a Teach For India Fellow from 2018-2020 in a lower income private school in Mumbai.
+                </p>
+
+                <button class="button"><a href="mailto:rajpriya.d@educatorsforequality.in
+
+                      " class="hover:text-white">Contact Me</a></button>
+              </div>
+            </div>
+            <div class="card swiper-slide">
+              <div class="image-content">
+                <span class="overlay"></span>
+
+                <div class="card-image">
+                  <img src="imageFolder/TeamMembers/Riju.jpg" alt="" class="card-img object-cover">
+                </div>
+              </div>
+
+              <div class="card-content">
+                <h2 class="name font-bold">RIJU BANERJEE</h2>
+                <p class="text-center">(She/ They)</p>
+                <p class="text-[#8dbdff] text-center my-2">Co-Founder and Director, Partnerships and Advocacy</p>
+                <p class="description text-justify md:text-[14px] text-[12px]">Riju is an intersectional trans*
+                  feminist, writer and social worker.
+                  She is passionate about sexual and reproductive health and rights and has worked with youth in
+                  multiple states of India. She was a Teach For India alumna working as a full-time educator in a low
+                  income private school in Mumbai from 2018-2020. She holds a Master’s degree in Mass Communication,
+                  Journalism, and Public Relations from University of Kolkata. She is a firm believer of social justice
+                  and radical relationships.</p>
+
+                <button class="button"><a href="mailto:riju.b@educatorsforequality.in
+                      " class="hover:text-white">Contact Me</a></button>
+              </div>
+            </div>
+
+            <div class="card swiper-slide">
+              <div class="image-content">
+                <span class="overlay"></span>
+
+                <div class="card-image">
+                  <img src="imageFolder/TeamMembers/Srijani.jpg" alt="" class="card-img object-cover">
+                </div>
+              </div>
+
+              <div class="card-content">
+                <h2 class="name font-bold">SRIJANI ROY</h2>
+                <p class="text-center">(She/ Her)</p>
+                <p class="text-[#8dbdff] text-center my-2">Lead, Teacher Development</p>
+                <p class="description text-justify md:text-[14px] text-[12px]">Srijani is an educator and teacher
+                  trainer. She is passionate about agency, voice, and inclusive education for all. She is a Teach for
+                  India Alumna from the 2020 cohort and holds a postgraduate degree in Development Studies from the
+                  Indian Institute of Technology, Guwahati. For leisure, she loves reading, watching shows, and
+                  gardening.</p>
+
+                <button class="button"><a href="mailto:srijani.roy@educatorsforequality.in
+                      " class="hover:text-white">Contact Me</a></button>
+              </div>
+            </div>
+
+            <div class="card swiper-slide">
+              <div class="image-content">
+                <span class="overlay"></span>
+
+                <div class="card-image">
+                  <img src="imageFolder/TeamMembers/Meera 2021.jpeg" alt="" class="card-img object-cover">
+                </div>
+              </div>
+
+              <div class="card-content">
+                <h2 class="name font-bold">MEERA B</h2>
+                <p class="text-center">(She/ Her)</p>
+                <p class="text-[#8dbdff] text-center my-2">Consultant, Research and Advocacy
+                </p>
+                <p class="description text-justify md:text-[14px] text-[12px]">Meera is a free spirit who after
+                  experiencing corporate life for four years, decided to take a break and find a new meaning in life by
+                  travelling across India for 8/9 months. She soon went from a volunteer empowering kids to work
+                  full-time with children with Teach For India (2020-22). From teaching and inspiring 8th graders to
+                  tackling important issues like climate justice and social inequalities, Meera's passion for change led
+                  her to start a learning center providing marginalized students a safe space to learn and grow.
+                  Currently, she continues to create an impact by focusing on implementing the National Education Policy
+                  (NEP) and fostering climate consciousness in government schools.
+                </p>
+
+                <button class="button"><a href="mailto:meera.b@educatorsforequality.in
+                      " class="hover:text-white">Contact Me</a></button>
+              </div>
+            </div>
+
+            <div class="card swiper-slide">
+              <div class="image-content">
+                <span class="overlay"></span>
+
+                <div class="card-image">
+                  <img src="imageFolder/TeamMembers/Vigya.jpg" alt="" class="card-img object-cover">
+                </div>
+              </div>
+
+              <div class="card-content">
+                <h2 class="name font-bold">VIGYA JAIN</h2>
+                <p class="text-center">(She/ Her)</p>
+                <p class="text-[#8dbdff] text-center my-2">Consultant, Design and Communication
+                </p>
+                <p class="description text-justify md:text-[14px] text-[12px]">Vigya is a passionate educator who firmly
+                  believes that every child can and must learn regardless of their physical, mental, social, and
+                  eco-political realities. She has worked with varied stakeholders including neurodivergent children and
+                  adults, prison inmates, parents, teachers, and school leaders. Vigya promotes well-being and
+                  recognizes that the best-laid-out plans fail if the stakeholders' well-being is not taken into
+                  consideration. She is an Alumna of Teach for India and Christ University. Vigya is continuously on the
+                  lookout for spaces of growth for self and others.
+                </p>
+
+                <button class="button"><a href="mailto:vigya.j@educatorsforequality.in
+                      " class="hover:text-white">Contact Me</a></button>
+              </div>
+            </div>
+
+            <div class="card swiper-slide">
+              <div class="image-content">
+                <span class="overlay"></span>
+
+                <div class="card-image">
+                  <img src="imageFolder/TeamMembers/Chandrayee.jpeg" alt="" class="card-img object-cover">
+                </div>
+              </div>
+
+              <div class="card-content">
+                <h2 class="name text-center font-bold z-1000000">CHANDRAYEE CHATTERJEE</h2>
+                <p class="text-center">(She/ Her)</p>
+                <p class="text-[#8dbdff] text-center my-2">Consultant, Student Learning and Assessments
+                </p>
+                <p class="description text-justify md:text-[14px] text-[12px]">Chandrayee is a proud alumna of Teach For
+                  India, where her first teaching experience with children in Pune made her fall in love with the
+                  transformative power of the classroom. Originally from Kolkata, Chandrayee loves meeting new people
+                  who can teach her something new about life. She has also worked as an English teacher in Yuwaah India
+                  and spent time teaching children in rural Jharkhand. She has a Master's in Applied Psychology from the
+                  University of Calcutta, and she dabbles in classroom interventions for students with learning
+                  disabilities. In addition to teaching academic content, she is very passionate about creating an
+                  inclusive and happy classroom and passing on her love for reading.
+                </p>
+
+                <button class="button"><a href="mailto:chandrayee.c@educatorsforequality.in
+                      " class="hover:text-white">Contact Me</a></button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div id="next" class="swiper-button-next swiper-navBtn "></div>
+        <div id="prev" class="swiper-button-prev swiper-navBtn"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+
+
+
+
+    <!-- fAQ section  -->
+
+
+    <section
+      class="mx-auto w-[90%] rounded-[15px] FAQ bg-[#E6E6FA] bg-opacity-50 flex flex-col justify-center items-center lg:min-h-[100vh] min-h-[80vh] py-6 gap-6 ">
+      <div>
+        <h3 class="my-6 text-center md:text-5xl text-3xl font-bold text-black drop-shadow-lg"><span
+            class="md:text-6xl text-4xl text-[#8dbdff]">F</span><span class="text-[#8dbdff]">requently</span> Asked
+          Questions ?</h3>
+      </div>
+      <div class="container  bg-[#8dbdff]  flex md:flex-row flex-col">
+        <div class="content flex md:flex-row flex-col gap-8">
+          <div class=" left-side containersFAQ md:w-[75%] w-[100%]">
+            <div class="row">
+              <div class="faq-wrapper w-[90%]">
+
+                <div class="faq-inner bg-[#E6E6FA] bg-opacity-50 rounded-[15px]">
+                  <div class="faq-item">
+                    <h3 class="font-bold">
+                      What is E4E?
+                      <span class="faq-plus">&plus;</span>
+                    </h3>
+                    <div class="faq-body text-justify">
+                      Educators for Equality, is an community led organisation dedicated to promoting diversity,
+                      inclusion, and equity in education. We work with educators, school leaders, and other stakeholders
+                      to create inclusive learning environments for all students. Our programs and initiatives aim to
+                      support affirmative teaching practices, foster a sense of belonging, and address social biases in
+                      the education system. We provide training, resources, and opportunities for educators to enhance
+                      their inclusive practices and create a positive impact in the lives of their students.
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="faq-item">
+                    <h3 class="font-bold">
+                      Is E4E only for teachers?
+                      <span class="faq-plus">&plus;</span>
+                    </h3>
+                    <div class="faq-body text-justify">
+                      No, Educators for Equality (E4E) is not just for teachers. While our organisation places a strong
+                      emphasis on supporting teachers in creating inclusive and equitable learning environments, we also
+                      extend our reach to other stakeholders within the education ecosystem. This includes school
+                      administrators, teaching assistants, school leaders, policymakers, and anyone passionate about
+                      promoting diversity, inclusion, and equity in education. We believe that creating inclusive
+                      schools requires collective efforts from all stakeholders, and we strive to engage and collaborate
+                      with a wide range of individuals and organisations to drive positive change in the education
+                      system.
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="faq-item">
+                    <h3 class="font-bold">
+                      Who is the suitable audience for E4E's programs?
+                      <span class="faq-plus">&plus;</span>
+                    </h3>
+                    <div class="faq-body text-justify">
+                      E4E's programs are designed for a diverse range of educators, including new and senior teachers,
+                      school administrators, and teaching assistants. Whether you are just starting your teaching career
+                      or have years of experience, our programs provide valuable resources and support to enhance your
+                      inclusive teaching practices and create affirmative classrooms. Additionally, our programs are
+                      open to school leaders and other stakeholders in the education community who are passionate about
+                      promoting diversity, inclusion, and equity in education.
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="faq-item">
+                    <h3 class="font-bold">
+                      How can I support and get involved with Educators for Equality?
+                      <span class="faq-plus">&plus;</span>
+                    </h3>
+                    <div class="faq-body text-justify">
+                      There are several ways you can support and get involved with Educators for Equality. You can
+                      participate in our programs and events, volunteer your time and expertise, make a financial
+                      contribution to help us expand our reach, and promote inclusivity in education. Join our mailing
+                      list to stay updated, follow us on social media, participate in events and workshops, or explore
+                      volunteer opportunities. Your support and involvement are crucial in creating more inclusive and
+                      equitable learning environments for all students.
+
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="right-side md:w-[30%] w-[70%]">
+            <h4 id="sendUs" class="topic-text text-[#9626f2]">Send us a message</h4><br>
+            <p class="text-justify xl:block hidden">If you have any work from me or any types of quries related to my
+              tutorial, you can
+              send me message from here. It's my pleasure to help you.</p>
+
+            <div class="input-box">
+              <input type="text" name="name" id="name" placeholder="Enter your name" required>
+            </div>
+            <div class="input-box">
+              <input type="text" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="input-box">
+              <input type="text" name="phone" id="phone" placeholder="Enter your number" required>
+            </div>
+            <div class="input-box message-box">
+              <textarea name="message" id="message" cols="30" rows="10" placeholder="Enter your message"
+                required></textarea>
+
+            </div>
+            <div class="button" id="sendUsBtn" style="background-color: #fff;">
+              <button id="btn" class="bg-[#8dbdff] px-4 py-2 rounded-md hover:bg-[#FF4136] duration-300"
+                onclick="sendMail()">
+                Send Now
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Contact Us  -->
+
+
+    <section id="contactUS" class="cnt-us ">
+      <div class="head text-center my-[2rem]">
+        <h1 class="contact text-[#8dbdff] md:text-6xl text-3xl drop-shadow-md">Contact <span
+            class="text-black">Us</span> </h1>
+      </div>
+
+
+
+      <!-- <hr class="h" > -->
+      <div class="contact-container shadow-md">
+
+        <div class="contact-left">
+          <img src="imageFolder/ProgramImage/Get in touch-rafiki.png" alt="img" class="img object-cover loading-lazy"
+            style="background-position: center;">
+        </div>
+        <div class="contact-right">
+
+          <p>
+            <strong class="font-bold ">ADDRESS:</strong>
+          </p>
+          <p class="text-[#8dbdff]">Delhi, Bangalore, Kolkata</p>
+          <br />
+          <p>
+
+          <p>
+            <strong>PHONE:</strong>
+          </p>
+          <p class="text-[#8dbdff]">(+91) 8637558095</p>
+          <br />
+          <p>
+
+          <p>
+            <strong>EMAIL:</strong>
+          </p>
+          <p class="text-[#8dbdff]">educatorsforequality.india@gmail.com</p>
+          <br />
+          <p>
+            <strong>Get Social:</strong>
+          </p>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/projecte4e" target="_blank"><i
+                class="fab fa-facebook-square text-[#8dbdff]"></i></a>
+            <a href="https://www.linkedin.com/company/educators-for-equality/?viewAsMember=true&fbclid=IwAR0qj5EYBNUtplfyeviReBGeo3Q3VkUgxiBW6i-TQLcf4RnuVLy3eW5A4rw"
+              target="_blank"><i class="fa-brands fa-linkedin text-[#8dbdff]"></i></a>
+            <a href="https://www.instagram.com/project_e4e/?igshid=YmMyMTA2M2Y%3D" target="_blank"><i
+                class="fab fa-instagram-square text-[#8dbdff]"></i></a>
+          </div>
+          <br>
+          <p>
+            <strong>HELP & SUPPORT:</strong>
+          </p>
+          <p class="text-[#8dbdff]">Survey, Appoinment <br> knowledge</p>
+          <br />
+          <p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+
+
+
+  <!-- Footer Section  -->
+
+  <footer class="bg-[#8dbdff] py-6">
+    <div class="containerFooter items-center gap-4">
+      <div class="footer-nav">
+        <ul>
+          <li><a href="#">Disclaimer </a></li>
+          <li><a href="#">Privary Policies</a></li>
+        </ul>
+      </div>
+      <div class="flex flex-col gap-2">
+        <div>
+          <p class="text-center mx-auto text-white">Copyright &copy 2023 All Rights reserved by <span class="font-bold">
+              Educators For Equiality
+            </span></p>
+        </div>
+        <p class="md:text-[12px] text-[10px] mx-auto text-[#fff]">Design and Developed By <a
+            href="https://www.linkedin.com/in/sayandeeppaul/"
+            class="hover:text-[#ff4136] font-bold transition-all duration-300" target="_blank">Sayandeep Paul</a> </p>
+
+      </div>
+      <div class="footer-social">
+        <ul>
+          <li><a href="https://www.facebook.com/projecte4e" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+
+          <li><a href="https://www.instagram.com/project_e4e/?igshid=YmMyMTA2M2Y%3D" target="_blank"><i
+                class="fab fa-instagram"></i></a></li>
+          <li><a
+              href="https://www.linkedin.com/company/educators-for-equality/?viewAsMember=true&fbclid=IwAR0qj5EYBNUtplfyeviReBGeo3Q3VkUgxiBW6i-TQLcf4RnuVLy3eW5A4rw"
+              target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+
+  <script type="text/javascript">
+    $(".faq-plus").on('click', function () {
+      $(this).parent().parent().find('.faq-body').slideToggle();
+    });
+  </script>
+
+  <script src="JS/swiper-bundle.min.js"></script>
+  <script src="js/swiper-bundle.min2.js"></script>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
